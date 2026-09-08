@@ -11,7 +11,7 @@ public class Ejecutar {
             System.out.println("a[" + i + "]=" + a[i]);
         }
 
-        //Forma 2 -  llenando el arreglo de manera aleatoria
+        //Forma 2 -  Llenando el arreglo de manera aleatoria
         int[] b = new int[10];
         
        
