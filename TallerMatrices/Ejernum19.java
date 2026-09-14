@@ -7,9 +7,33 @@ public class Ejernum19 {
         
         int n = 3;
         int m = 3;
-        int matrices [][] = new int [n][m];
-
+      
+        int[][] matriz = new int[n][m];
         
+
+       
+        for(int i = 0; i < n; i++){
+            for(int j = 0; i < m; j++){
+                if (i == j) {
+                  matriz[i][j] = 1;                     
+                }else{
+                    matriz[i][j] = 0;
+                }
+
+            }
+          
+        }
+        System.out.println("= Matriz =" + n + "x" + m + "===");
+        String cad = "";
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                cad += "|" + matriz[i][j] + "\t";
+            }
+            cad += "\n";
+        }
+
+        System.out.println(cad);
+
 
     }
 }
