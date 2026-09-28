@@ -1,13 +1,12 @@
 package Parcial;
 
-
-   public class Main {
+public class Main {
     public static void main(String[] args) {
         
-        // ==========================================
-        // 1. PROBAR PELICULA
-        // ==========================================
-        System.out.println("========== PELICULAS ==========");
+      
+        // 1. PROBAR LA PELICULA
+   
+        System.out.println("= PELICULAS =");
         
         Pelicula p1 = new Pelicula("Avatar", "Ingles", "3D", 162);
         Pelicula p2 = new Pelicula("Titanic", "Español", "35mm", 195);
@@ -17,10 +16,10 @@ package Parcial;
         System.out.println("Nombre de p1: " + p1.getNombre());
         System.out.println("Tipo de p2: " + p2.getTipo());
         
-        // ==========================================
-        // 2. PROBAR SILLA
-        // ==========================================
-        System.out.println("\n========== SILLAS ==========");
+    
+        // 2. PROBAR LA SILLA
+      
+        System.out.println("\n= SILLAS =");
         
         silla s1 = new silla('A', 3, 8000);
         silla s2 = new silla('G', 4, 12000);
@@ -29,36 +28,44 @@ package Parcial;
         System.out.println(s2);
         System.out.println("Identificador de s2: " + s2.getIdentificador());
         
-        // Ocupar una silla
         s1.setDisponible(false);
         System.out.println("\nDespues de ocupar A3:");
         System.out.println(s1);
         
-        // ==========================================
-        // 3. PROBAR SALA 1 (con preferencial, no 3D)
-        // ==========================================
-        System.out.println("\n========== SALA 1 ==========");
+      
+        // 3. PROBAR LA SALA 1
+     
+        System.out.println("\n=SALA 1 =");
         
         Sala sala1 = new Sala(1, true, false);
         sala1.mostrarSala();
         System.out.println("Sillas disponibles: " + sala1.contarDisponibles());
         
-        // ==========================================
-        // 4. PROBAR SALA 3 (sin preferencial, 3D)
-        // ==========================================
-        System.out.println("\n========== SALA 3 (3D) ==========");
+   
+        // 4. PROBAR LA SALA 3
+       
+        System.out.println("\n= SALA 3 (3D) =");
         
         Sala sala3 = new Sala(3, false, true);
         sala3.mostrarSala();
         System.out.println("Sillas disponibles: " + sala3.contarDisponibles());
+ 
+        // 5. PROBAR LA FUNCION
+       
+        System.out.println("\n= FUNCION =");
         
-        // ==========================================
-        // 5. OCUPAR UNA SILLA EN SALA 1
-        // ==========================================
-        System.out.println("\n========== OCUPANDO A3 EN SALA 1 ==========");
+        Funcion f1 = new Funcion(p1, sala1, 1);
+        f1.mostrarEsquema();
         
-        sala1.getSillas()[0][2].setDisponible(false);   // fila a, silla 3
-        sala1.mostrarSala();
-        System.out.println("Sillas disponibles: " + sala1.contarDisponibles());
+        
+        // 6. OCUPAR SILLAS EN LA FUNCION
+       
+        System.out.println("\n========== OCUPANDO SILLAS ==========");
+        
+        f1.ocuparSilla(0, 2);   // A3
+        f1.ocuparSilla(1, 7);   // B8
+        f1.ocuparSilla(3, 8);   // D9
+        
+        f1.mostrarEsquema();
     }
 }
